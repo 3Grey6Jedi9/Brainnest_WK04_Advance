@@ -129,19 +129,24 @@ if __name__ == '__main__':
 
     while ValueError:
         try:
-            key = int(input('Enter the key so I can configurate the encryptor: '))
+            key = int(input('Enter the key so I can configurate the encryptor (Enter 0 if you want to use the key stored): '))
+            if key == 0:
+                with open('key') as f:
+                    key = int(f.read())
             if key not in range(1,76):
                 raise ValueError
         except ValueError:
             print('You must enter an integer lower than 76')
             pass
         else:
+            with open('key', 'w') as f:
+                f.write(str(key))
             encryptor = Caesar_Cipher(key)
             encryptor.proceed()
 
 
 
-
+# Do not set a password with more than 5 characters for processing time reasons
 
 
 
