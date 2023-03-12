@@ -146,7 +146,7 @@ if __name__ == '__main__':
 
 
 
-# Do not set a password with more than 5 characters for processing time reasons
+# Do not set a password with more than 5 characters for processing time reasons when performing the brute-force attack
 
 
 
